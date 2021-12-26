@@ -1,3 +1,4 @@
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -25,6 +26,10 @@ public class RegisterTest {
         driver.findElement(By.id("confirmation")).sendKeys("parola2");
         driver.findElement(By.cssSelector(".control label")).click();
         driver.findElement(By.cssSelector(".buttons-set button")).click();
+    }
+    @After
+    public void closeBrowser() {
+        driver.quit();
     }
 
 

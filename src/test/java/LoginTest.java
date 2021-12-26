@@ -1,3 +1,4 @@
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -64,5 +65,8 @@ public class LoginTest {
         String expectedText = "The account information has been saved.";
         Assert.assertEquals(expectedText,actualText);
     }
-
+    @After
+    public void closeBrowser() {
+        driver.quit();
+    }
 }

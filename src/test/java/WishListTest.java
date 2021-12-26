@@ -1,4 +1,5 @@
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -92,6 +93,7 @@ public class WishListTest {
         String expectedText = "2 product(s) have been added to shopping cart: \"Elizabeth Knit Top\", \"Chelsea Tee\".";
         Assert.assertEquals(expectedText,actualText);
     }
+    @Test
     //Test 10
     public void reviewAnItem(){
         driver.findElement(By.cssSelector("[alt*=\"Travel\"]")).click();
@@ -106,5 +108,9 @@ public class WishListTest {
         String actualText = driver.findElement(By.cssSelector(".success-msg")).getText();
         String expectedText = "Your review has been accepted for moderation.";
         Assert.assertEquals(expectedText,actualText);
+    }
+    @After
+    public void closeBrowser() {
+        driver.quit();
     }
 }
